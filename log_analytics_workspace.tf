@@ -53,7 +53,7 @@ resource "azurerm_log_analytics_workspace" "this" {
 
 module "lupus_az_role_assignment" {
   source  = "lupusllc/role-assignment/azurerm" # https://registry.terraform.io/modules/lupusllc/storage-account/azurerm/latest
-  version = "0.0.1"
+  version = "0.0.3"
   for_each = local.role_assignments
 
   role_assignments = [for role in each.value : merge(role, {
